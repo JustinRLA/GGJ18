@@ -34,7 +34,7 @@ public class CameraCollision : MonoBehaviour {
         {
             camRB.isKinematic = true;
             transform.position = targetCameraPosition.position;
-            //transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, Time.time);
+            transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, Time.time);
             //resetCameraPos = false;
             camRB.isKinematic = false;
         }

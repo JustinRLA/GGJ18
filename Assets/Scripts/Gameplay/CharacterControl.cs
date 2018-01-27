@@ -9,6 +9,10 @@ public class CharacterControl : MonoBehaviour {
     private float rightMove;
     private float rightRotate;
 
+    public GameObject coughPrefab;
+    public Transform coughSpawn;
+    public float coughProjectileSpeed = 10;
+
     // Use this for initialization
     void Start () {
 		
@@ -25,5 +29,25 @@ public class CharacterControl : MonoBehaviour {
 
         transform.Translate(0, 0, (leftMove + rightMove));
         transform.Rotate(0, (leftRotate + rightRotate)/5,0);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Cough();
+        }
+    }
+
+    void Cough()
+    {
+        // Create the Cough from the Bullet Prefab
+        var cough = (GameObject)Instantiate(
+            coughPrefab,
+            coughSpawn.position,
+            coughSpawn.rotation);
+
+        // Add velocity to the cough
+        cough.GetComponent<Rigidbody>().velocity = cough.transform.forward * coughProjectileSpeed;
+
+        // Destroy the cough after 2 seconds
+        Destroy(cough, 2.0f);
     }
 }
