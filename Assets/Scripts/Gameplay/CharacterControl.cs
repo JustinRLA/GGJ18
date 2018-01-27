@@ -33,6 +33,7 @@ public class CharacterControl : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Cough();
+            //Manager_Effect.Manager.Call_Spit();
         }
     }
 

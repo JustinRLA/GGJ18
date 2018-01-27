@@ -7,6 +7,7 @@ TagManager:
   - PANIC
   - Survivor
   - Infected
+  - Cough
   layers:
   - Default
   - TransparentFX

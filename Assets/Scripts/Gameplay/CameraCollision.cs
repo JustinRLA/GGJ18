@@ -23,13 +23,13 @@ public class CameraCollision : MonoBehaviour {
         originalRotationValue = transform.rotation;
         camRB = GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         distanceFromPlayer = Vector3.Distance(player.position, transform.position);
         distanceFromTarget = Vector3.Distance(targetCameraPosition.position, transform.position);
-        
+
         if (distanceFromPlayer > maxDistanceFromPlayer)
         {
             camRB.isKinematic = true;
@@ -40,8 +40,10 @@ public class CameraCollision : MonoBehaviour {
         }
         if (resetCameraPos)
         {
+            camRB.isKinematic = true;
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetCameraPosition.position, step);
+            camRB.isKinematic = false;
         }
 
         transform.LookAt(player);
