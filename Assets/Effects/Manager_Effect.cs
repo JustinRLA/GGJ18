@@ -16,6 +16,15 @@ public class Manager_Effect : MonoBehaviour {
 		
 	}
 
+	public void Call_CameraShake(){
+		Game_UI.Manager.Call_CameraShake();
+	}
+	public GameObject prefabSpitPuddle;
+	public void Call_SpitPuddle(ref float timer, Transform myTransform){
+		if(Time.time < timer){return;}
+		Instantiate(prefabSpitPuddle, myTransform.position, myTransform.rotation);
+		timer = Time.time + 0.2f;
+	}
 	public GameObject prefabSpitEffect;
 	public void Call_Spit(){
 		for(int i = 0; i < 10; i++){

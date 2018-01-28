@@ -10,14 +10,23 @@ public static class Terrain{
 
 public class Terrain_Function : MonoBehaviour {
 
-	public float MovementPercent(){
-		if(movementSpeedPercent == 0){return 1;}
-		float _result_f = movementSpeedPercent * 0.01f;
+	public float MovementPercentNPC(){
+		if(movementSpeedPercentNPC == 0){return 1;}
+		float _result_f = movementSpeedPercentNPC * 0.01f;
 		return _result_f;
 	}
 
-	int movementSpeedPercent;
-	_Trigger_Terrain myTrigger;
+    public float MovementPercentPlayer()
+    {
+        if (movementSpeedPercentPlayer == 0) { return 1; }
+        float _result_f = movementSpeedPercentPlayer * 0.01f;
+        return _result_f;
+    }
+
+    int movementSpeedPercentNPC;
+    int movementSpeedPercentPlayer;
+
+    _Trigger_Terrain myTrigger;
 	LayerMask detectLayers = 1 << 11;
 	Transform myTransform;
 	void Start(){
@@ -33,14 +42,19 @@ public class Terrain_Function : MonoBehaviour {
 			if(myTrigger != hit.collider.GetComponent<_Trigger_Terrain>()){
 				myTrigger = hit.collider.GetComponent<_Trigger_Terrain>();
 			}
-			if(movementSpeedPercent != myTrigger.movementSpeedPercent){
-				movementSpeedPercent = myTrigger.movementSpeedPercent;
+			if(movementSpeedPercentNPC != myTrigger.movementSpeedPercentNPC){
+				movementSpeedPercentNPC = myTrigger.movementSpeedPercentNPC;
 			}
-		}
+            if (movementSpeedPercentPlayer != myTrigger.movementSpeedPercentPlayer)
+            {
+                movementSpeedPercentPlayer = myTrigger.movementSpeedPercentPlayer;
+            }
+        }
 		else {
 			if(myTrigger != null){myTrigger = null;}
-			if(movementSpeedPercent != 0){movementSpeedPercent = 0;}
-		}
+			if(movementSpeedPercentNPC != 0){movementSpeedPercentNPC = 0;}
+            if (movementSpeedPercentPlayer != 0) { movementSpeedPercentPlayer = 0; }
+        }
 		FPS = Time.time + 0.2f;
 	}
 }

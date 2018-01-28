@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23611581681318146}
   - component: {fileID: 54535158019714196}
   - component: {fileID: 114262737841771458}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cough
   m_TagString: Cough
   m_Icon: {fileID: 0}
@@ -111,6 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7dd8ffd1741f1e48a612e3ae211551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePerHit: 10
+  scoreToAdd: 0
+  comboMultiplier: 1
 --- !u!135 &135682999167222358
 SphereCollider:
   m_ObjectHideFlags: 1

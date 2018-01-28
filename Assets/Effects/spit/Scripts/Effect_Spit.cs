@@ -13,6 +13,10 @@ public class Effect_Spit : MonoBehaviour {
 	public float forceUpMin = 50f;
 	public float forceUpMax = 500f;
 	public float forceDirectionSpread = 30;
+	public float spriteSizeMin = 0.3f;
+	public float spriteSizeMax = 0.6f;
+	public float spriteColorAlphaLevelMin = 1f;
+	public float spriteColorAlphaLevelMax = 0.9f;
 
 	public int state;
 	Transform myTransform;
@@ -41,8 +45,8 @@ public class Effect_Spit : MonoBehaviour {
 					                                      myTransform.eulerAngles.z);
 				}
 			}
-			splatSprite.color = new Color(splatSprite.color.r - Random.Range(0,0.1f),splatSprite.color.g - Random.Range(0,0.1f),splatSprite.color.b - Random.Range(0,0.1f),splatSprite.color.a - Random.Range(0,0.1f));
-			splatSprite.transform.localScale = new Vector3(Random.Range(0.3f,0.6f),Random.Range(0.3f,0.6f),splatSprite.transform.localScale.z);
+			splatSprite.color = new Color(splatSprite.color.r * Random.Range(1,0.9f),splatSprite.color.g * Random.Range(1,0.9f),splatSprite.color.b * Random.Range(1,0.9f),splatSprite.color.a * Random.Range(spriteColorAlphaLevelMin,spriteColorAlphaLevelMax));
+			splatSprite.transform.localScale = new Vector3(Random.Range(spriteSizeMin,spriteSizeMax),Random.Range(spriteSizeMin,spriteSizeMax),splatSprite.transform.localScale.z);
 			splatSprite.transform.eulerAngles = new Vector3(90,Random.Range(0,360),0);
 			myRigidbody.AddForce(myTransform.forward * Random.Range(forceForwardMin,forceForwardMax));
 			myRigidbody.AddForce(myTransform.up * Random.Range(forceUpMin,forceUpMax));

@@ -360,7 +360,7 @@ public class AI_Function : MonoBehaviour {
 	}
 
 	void MoveForward(float speed){
-		myTransform.Translate(Vector3.forward * (speed * myTerrain.MovementPercent()) * Time.deltaTime);
+		myTransform.Translate(Vector3.forward * (speed * myTerrain.MovementPercentNPC()) * Time.deltaTime);
 	}
 	void LookAt(Transform target) {
 		if(Time.time < Function_WallCheck_TIMER){return;}
