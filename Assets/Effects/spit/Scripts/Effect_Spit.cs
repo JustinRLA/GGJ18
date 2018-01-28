@@ -33,7 +33,6 @@ public class Effect_Spit : MonoBehaviour {
 			RaycastHit hit;
 			if(Physics.Raycast(new Vector3(myTransform.position.x, myTransform.position.y + 1f, myTransform.position.z),
 			                   Vector3.down, out hit, 100, detectLayers)){
-				Debug.Log("WORLK");
 				if(hit.collider != null){
 					myTransform.position = new Vector3(myTransform.position.x,hit.point.y + 0.01f,myTransform.position.z);
 				}
