@@ -8,6 +8,10 @@ public class CharacterControl : MonoBehaviour {
     private float leftRotate;
     private float rightMove;
     private float rightRotate;
+    public SpriteRenderer LeftForward;
+    public SpriteRenderer RightForward;
+    public SpriteRenderer LeftBackward;
+    public SpriteRenderer RightBackward;
 
     public GameObject coughPrefab;
     public Transform coughSpawn;
@@ -15,6 +19,8 @@ public class CharacterControl : MonoBehaviour {
     public float coughProjectileDuration = 2.0f;
 
     Terrain_Function myTerrain;
+
+    public Animator bodyAnimator;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +38,56 @@ public class CharacterControl : MonoBehaviour {
 
         transform.Translate(0, 0, (leftMove + rightMove));
         transform.Rotate(0, (leftRotate + rightRotate)/5,0);
+
+
+        //W Control Indicator
+        if(Input.GetAxis("LeftMove") > 0)
+        {
+            LeftForward.color = Color.green;
+        }
+        else
+        {
+            LeftForward.color = Color.white;
+        }
+        //O Control Indicator
+        if (Input.GetAxis("RightMove") > 0)
+        {
+            RightForward.color = Color.green;
+        }
+        else
+        {
+            RightForward.color = Color.white;
+        }
+        //X Control Indicator
+        if (Input.GetAxis("LeftMove") < 0)
+        {
+            LeftBackward.color = Color.green;
+        }
+        else
+        {
+            LeftBackward.color = Color.white;
+        }
+        //M Control Indicator
+        if (Input.GetAxis("RightMove") < 0)
+        {
+            RightBackward.color = Color.green;
+        }
+        else
+        {
+            RightBackward.color = Color.white;
+        }
+
+
+
+
+        if (Input.GetAxis("LeftMove") != 0 || Input.GetAxis("RightMove") != 0)
+        {
+            bodyAnimator.SetFloat("Blend", 1);
+        }
+        else
+        {
+            bodyAnimator.SetFloat("Blend", 0);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
