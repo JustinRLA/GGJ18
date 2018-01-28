@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95317548879836938}
   - component: {fileID: 65492065856127554}
   m_Layer: 0
-  m_Name: "Fene\u0302tre"
+  m_Name: "Fen\xEAtre"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

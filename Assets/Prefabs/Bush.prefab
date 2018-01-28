@@ -52,14 +52,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190355220335470}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.879, y: 0.64, z: -26.408}
-  m_LocalScale: {x: 0.65313274, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.43968123, z: -0, w: 0.89815396}
+  m_LocalPosition: {x: -75.51016, y: -1.3519976, z: -38.221985}
+  m_LocalScale: {x: 0.8440502, y: 1.2923098, z: 1.2923101}
   m_Children:
   - {fileID: 4838593334250974}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 52.167004, z: 0}
 --- !u!4 &4838593334250974
 Transform:
   m_ObjectHideFlags: 1
@@ -154,5 +154,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d05d88d562c4096b94f92f9885b5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeedPercentNPC: 40
-  movementSpeedPercentPlayer: 100
+  movementSpeedPercentNPC: 100
+  movementSpeedPercentPlayer: 15
