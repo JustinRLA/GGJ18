@@ -50,6 +50,8 @@ public class CharacterControl : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && coughCharge >= coughChargeFull)
         {
             Cough();
+            bodyAnimator.SetTrigger("Spit");
+            headAnimator.SetTrigger("Spit");
             Manager_Effect.Manager.Call_Spit();
             coughCharge = 0.0f;
         }
@@ -60,12 +62,16 @@ public class CharacterControl : MonoBehaviour {
             coughCharge += coughChargeRate;
             if(coughCharge >= coughChargeFull * 0.8)
             {
-                //Play readying to shoot
+                //Readying to shoot
+                bodyAnimator.SetBool("Charge", true);
+                headAnimator.SetBool("Charge", true);
             }
         }
         else
         {
             //Set ready to shoot animation
+            bodyAnimator.SetBool("Charge", false);
+            headAnimator.SetBool("Charge", false);
         }
 
 
@@ -97,10 +103,12 @@ public class CharacterControl : MonoBehaviour {
         if (Input.GetAxis("LeftMove") != 0 || Input.GetAxis("RightMove") != 0)
         {
             bodyAnimator.SetFloat("Blend", 1);
+            headAnimator.SetFloat("Blend", 1);
         }
         else
         {
             bodyAnimator.SetFloat("Blend", 0);
+            headAnimator.SetFloat("Blend", 0);
         }
 
         
