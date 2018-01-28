@@ -154,5 +154,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d05d88d562c4096b94f92f9885b5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeedPercentNPC: 40
+  movementSpeedPercentNPC: 25
   movementSpeedPercentPlayer: 100
