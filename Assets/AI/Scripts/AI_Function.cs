@@ -59,6 +59,7 @@ public class AI_Function : MonoBehaviour {
 	float myTransform_Direction;
 	Transform myTransform;
 	Rigidbody myRigidbody;
+	Terrain_Function myTerrain;
 	[HideInInspector] public GameObject PanicTrigger;
 	// Use this for initialization
 	void Start () {
@@ -67,6 +68,7 @@ public class AI_Function : MonoBehaviour {
 		myTransform = transform;
 		myRigidbody = GetComponent<Rigidbody>();
 		PanicTrigger.SetActive(false);
+		myTerrain = Terrain.Get(gameObject);
 	}
 
 	public int state;
@@ -97,7 +99,6 @@ public class AI_Function : MonoBehaviour {
 			break;
 		}
 	}
-
 
 	void Update_CharacterState_AI_Lama(){
 		Function_WallCheck();
@@ -359,7 +360,7 @@ public class AI_Function : MonoBehaviour {
 	}
 
 	void MoveForward(float speed){
-		myTransform.Translate(Vector3.forward * speed * Time.deltaTime);
+		myTransform.Translate(Vector3.forward * (speed * myTerrain.MovementPercent()) * Time.deltaTime);
 	}
 	void LookAt(Transform target) {
 		if(Time.time < Function_WallCheck_TIMER){return;}

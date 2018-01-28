@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
+    public int scorePerHit = 10;
     public int scoreToAdd = 0;
     public int comboMultiplier = 1;
 
@@ -25,6 +26,8 @@ public class Projectile : MonoBehaviour {
             //print("It's a survivor!");
             collision.gameObject.GetComponent<AI_Function>().state = 2;
             collision.gameObject.tag = "Infected";
+
+            //Add score
         }
     }
 }

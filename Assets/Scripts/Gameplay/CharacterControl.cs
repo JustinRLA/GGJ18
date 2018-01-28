@@ -12,6 +12,7 @@ public class CharacterControl : MonoBehaviour {
     public GameObject coughPrefab;
     public Transform coughSpawn;
     public float coughProjectileSpeed = 10;
+    public float coughProjectileDuration = 2.0f;
 
     // Use this for initialization
     void Start () {
@@ -49,6 +50,6 @@ public class CharacterControl : MonoBehaviour {
         cough.GetComponent<Rigidbody>().velocity = cough.transform.forward * coughProjectileSpeed;
 
         // Destroy the cough after 2 seconds
-        Destroy(cough, 2.0f);
+        Destroy(cough, coughProjectileDuration);
     }
 }
