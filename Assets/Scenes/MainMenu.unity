@@ -313,7 +313,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A GAME BY \xC9QUIPE \xC9TOILE\r\n\nName\nName\nName\nName\nName\nName"
+  m_Text: "A GAME BY ARTIST FOUND. KTHX\n\nAnnie-Claude Leblanc\nL\xE9andre W. Bolduc\nJoeson
+    Yu\nJustin Loranger-Ahluwalia\nElie Henriques\nIsabelle Chamois\nAnthony Cousineau\nCarlyne
+    Poizeau"
 --- !u!222 &290538536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2761,8 +2763,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Text.\n\r\nOBJECTIVES\r\n\nText.\n\r\nCONTROLS\r\n\r\nInput - Action\nInput
-    - Action\nEscape - Return to main menu"
+  m_Text: "In the year 20XX, a brand new highly contagious super virus has emerged:
+    Llamalaria.\r\nLlamalaria is caused by a virus that is spread by direct contact
+    with flegm or saliva of a contaminee.\r\nSymptoms of Llamalaria include: a neurological
+    condition that impairs the subject's movement, an abondance of nasal secretions,
+    \r\nan urge to create more contaminees by spitting and coughing on them and a
+    physical transformation of the subject's head into a llama's head\r\n to ensure
+    more spitting power and accuracy.\r\n\r\nResistance is futile.\r\n\r\nIt will
+    find you...\r\n\r\nAnd it will spit on you.\n\n\nOBJECTIVE\n\nSpit on everyone.\n\r\nCONTROLS\r\n\r\nW
+    - Forward Left\nX - Backward Right\nO - Forward Right\nM - Backward Left\nSpace
+    Bar - Spit\nEscape - Return to main menu"
 --- !u!222 &1848303298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2841,6 +2851,115 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1985899350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1985899352}
+  - component: {fileID: 1985899351}
+  m_Layer: 0
+  m_Name: Lamenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1985899351
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985899350}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 442ad009cf643514caa99377a1b1f896, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1985899352
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985899350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.80809, y: 15.227917, z: -2.204361}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017349721
 GameObject:
   m_ObjectHideFlags: 0
