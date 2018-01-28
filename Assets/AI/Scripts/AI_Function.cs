@@ -65,7 +65,7 @@ public class AI_Function : MonoBehaviour {
     public Animator bodyAnimator;
     public Animator headAnimator;
 	public Animator headLamaAnimator;
-
+    
 	float VFX_Convert_TIMER;
 	public GameObject[] VFX_Convert = new GameObject[2];
 
@@ -125,7 +125,6 @@ public class AI_Function : MonoBehaviour {
 			headAnimator.SetBool("detectLama", false);
 			for(int i = 0; i < VFX_Convert.Length; i++){VFX_Convert[i].SetActive(true);}
 			VFX_Convert_TIMER = Time.time + 10f;
-			RandomFX.Manager.GetComponent<RandomFX_Llama>().PlayFootstepStone();
 			characterState = "chilling";
 			break;
 		case "chilling":
@@ -297,7 +296,6 @@ public class AI_Function : MonoBehaviour {
 			headAnimator.SetBool("detectLama", true);
 			bodyAnimator.SetBool("Walk", true);
 			headAnimator.SetBool("Walk", true);
-			RandomFX.Manager.GetComponent<RandomFX_Scream>().PlayFootstepStone();
 			characterState_TOGGLE = characterState;
 		}
 		switch(State_Running_STATE){

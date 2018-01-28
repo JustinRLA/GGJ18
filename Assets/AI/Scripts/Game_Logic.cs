@@ -5,7 +5,6 @@ using UnityEngine;
 public class Game_Logic : MonoBehaviour {
 	public static Game_Logic Manager;
 	void Awake(){
-		GameObject.Find("RandomSound").AddComponent<RandomFX>();
 		Manager = GetComponent<Game_Logic>();
 	}
 
@@ -25,18 +24,9 @@ public class Game_Logic : MonoBehaviour {
 		public int Score;
 	}
 	public _Info Info;
-
-	public GameObject prefab_screenTransition;
-	public void Call_ScreenTranition(bool toggle, int sceneNum){
-		GameObject _inst = Instantiate(prefab_screenTransition, prefab_screenTransition.transform.position, prefab_screenTransition.transform.rotation) as GameObject;
-		_inst.GetComponent<ScreenTransition>().transitionIn = toggle;
-		_inst.GetComponent<ScreenTransition>().newSceneNumber = sceneNum;
-		_inst.SetActive(true);
-	}
-
+	
 	// Use this for initialization
 	void Start () {
-		Call_ScreenTranition(true, -1);
 		if( player != null){
 			AI.Set_Player(player);
 		}
@@ -84,7 +74,7 @@ public class Game_Logic : MonoBehaviour {
 				gameState = "gameover";
 				break;
 			case "gameover":
-				Call_ScreenTranition(false, 0);
+	
 				break;
 			}
 			break;
