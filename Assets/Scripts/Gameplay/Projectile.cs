@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
+    public int scoreToAdd = 0;
+    public int comboMultiplier = 1;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +19,12 @@ public class Projectile : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("I hit something");
+        //print("I hit something");
         if (collision.gameObject.tag == "Survivor")
         {
-            print("It's a survivor!");
+            //print("It's a survivor!");
             collision.gameObject.GetComponent<AI_Function>().state = 2;
+            collision.gameObject.tag = "Infected";
         }
     }
 }
