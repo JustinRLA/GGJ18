@@ -14,19 +14,21 @@ public class CharacterControl : MonoBehaviour {
     public float coughProjectileSpeed = 10;
     public float coughProjectileDuration = 2.0f;
 
+    Terrain_Function myTerrain;
+
     // Use this for initialization
     void Start () {
-		
-	}
+        myTerrain = Terrain.Get(gameObject);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
         //Movement
-        leftMove = Input.GetAxis("LeftMove") * Time.deltaTime * 5.0f;
-        leftRotate = Input.GetAxis("LeftMove") * Time.deltaTime * 150.0f;
-        rightMove = Input.GetAxis("RightMove") * Time.deltaTime * 5.0f;
-        rightRotate = Input.GetAxis("RightMove") * Time.deltaTime * -150.0f;
+        leftMove = Input.GetAxis("LeftMove") * Time.deltaTime * 5.0f * myTerrain.MovementPercentPlayer();
+        leftRotate = Input.GetAxis("LeftMove") * Time.deltaTime * 150.0f * myTerrain.MovementPercentPlayer();
+        rightMove = Input.GetAxis("RightMove") * Time.deltaTime * 5.0f * myTerrain.MovementPercentPlayer();
+        rightRotate = Input.GetAxis("RightMove") * Time.deltaTime * -150.0f * myTerrain.MovementPercentPlayer();
 
         transform.Translate(0, 0, (leftMove + rightMove));
         transform.Rotate(0, (leftRotate + rightRotate)/5,0);
