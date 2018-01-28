@@ -27,6 +27,7 @@ AudioMixerController:
     - 3f3dcb60e43f07548933ca2f78454c4a
     - f0b51dc82ba2afe428946a4b923af7f6
     - cace6c1e4aed5bd499e2a1270b63ec48
+    - 09217d0f4e0ec5a48af3356e8df170a8
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -48,6 +49,7 @@ AudioMixerGroupController:
   - {fileID: 243904889729294042}
   - {fileID: 243118436625549780}
   - {fileID: 243954309368968564}
+  - {fileID: 243439298036545750}
   m_Volume: 35ea357824256124e88c103a92733f55
   m_Pitch: 35a31f3fe0349f84bba27a48cc5f0ffe
   m_Effects:
@@ -126,6 +128,23 @@ AudioMixerGroupController:
   m_Pitch: 9dc92f06ad54ec149a669d0ef7eb3fb7
   m_Effects:
   - {fileID: 244967779820951034}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &243439298036545750
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FX_Bush
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 09217d0f4e0ec5a48af3356e8df170a8
+  m_Children: []
+  m_Volume: bc38c48e0b685dd49aa10041a148384f
+  m_Pitch: 7b6c5c39509c32c44a5a72d8875d1c29
+  m_Effects:
+  - {fileID: 244211234169519156}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -241,6 +260,19 @@ AudioMixerEffectController:
   m_EffectID: 095e5b02c3d23ae46987ea4e11864508
   m_EffectName: Attenuation
   m_MixLevel: 54f9a97759b655944919e4ca8fa16c97
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244211234169519156
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 27e50ada24f136844aa71d2bfe96e7ee
+  m_EffectName: Attenuation
+  m_MixLevel: 2243d7f2490b3d847b3a28395851a405
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
