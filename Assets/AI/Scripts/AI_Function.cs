@@ -62,9 +62,9 @@ public class AI_Function : MonoBehaviour {
 	Terrain_Function myTerrain;
 
     //Justin's variables
-    public Animator bodyAnimator;
-    public Animator headAnimator;
-
+    //public Animator bodyAnimator;
+    //public Animator headAnimator;
+    
     [HideInInspector] public GameObject PanicTrigger;
 	// Use this for initialization
 	void Start () {
@@ -116,7 +116,7 @@ public class AI_Function : MonoBehaviour {
 			characterState = "chilling";
 
             //Justin Anim
-            bodyAnimator.SetBool("detectLama", false);
+            //bodyAnimator.SetBool("detectLama", false);
 
 			break;
 		case "chilling":
@@ -141,7 +141,7 @@ public class AI_Function : MonoBehaviour {
 			if(Time.time >= CharacterState_TIMER){
                 
                 //Justin Anim
-                bodyAnimator.SetBool("Walk", false);
+                //bodyAnimator.SetBool("Walk", false);
 
                 CharacterState_MOVEMENTSPEED = Random.Range(STAT.NORMAL.movementSpeedMin,STAT.NORMAL.movementSpeedMax);
 				CharacterState_TIMER = Time.time + Random.Range(STAT.NORMAL.IdleDurationMin,STAT.NORMAL.IdleDurationMax);
@@ -154,7 +154,7 @@ public class AI_Function : MonoBehaviour {
 			MoveForward(CharacterState_MOVEMENTSPEED);
             
             //Justin Anim
-            bodyAnimator.SetBool("Walk", true);
+            //bodyAnimator.SetBool("Walk", true);
 
 			if(Time.time >= CharacterState_TIMER){
 				CharacterState_TIMER = Time.time + Random.Range(STAT.NORMAL.movementDurationMin,STAT.NORMAL.movementDurationMin);
@@ -194,7 +194,7 @@ public class AI_Function : MonoBehaviour {
 			if(Vector3.Distance(myTransform.position, targetTransform.position) <= STAT.FOLLOW_LAMA.ReactionRadius){
 				characterState = "chilling";
                 //Justin Anim
-                bodyAnimator.SetBool("detectLama", false);
+                //bodyAnimator.SetBool("detectLama", false);
 			}
 			break;
 		}
@@ -293,7 +293,7 @@ public class AI_Function : MonoBehaviour {
 				characterState = "panic";
 
                 //Justin Anim
-                bodyAnimator.SetBool("detectLama", true);
+                //bodyAnimator.SetBool("detectLama", true);
             }
 			break;
 		}
@@ -313,13 +313,13 @@ public class AI_Function : MonoBehaviour {
 			characterState = "running";
 
             //Justin Anim
-            bodyAnimator.SetBool("detectLama", true);
+            //bodyAnimator.SetBool("detectLama", true);
         }
 		if(Time.time >= State_Panic_TIMER){
 			characterState = "normal";
 
             //Justin Anim
-            bodyAnimator.SetBool("detectLama", false);
+            //bodyAnimator.SetBool("detectLama", false);
         }
 		switch(State_Panic_STATE){
 		case 0:
@@ -392,7 +392,7 @@ public class AI_Function : MonoBehaviour {
 		myTransform.Translate(Vector3.forward * (speed * myTerrain.MovementPercentNPC()) * Time.deltaTime);
         
         //Justin animation
-        bodyAnimator.SetBool("Walk", true);
+        //bodyAnimator.SetBool("Walk", true);
     }
 	void LookAt(Transform target) {
 		if(Time.time < Function_WallCheck_TIMER){return;}
