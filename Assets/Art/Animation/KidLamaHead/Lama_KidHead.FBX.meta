@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ee23e3a047504ec48a1ad8ceaa3f9c89
-timeCreated: 1517106234
+guid: 4ac90e8de049ac942b1cc3614ca638f8
+timeCreated: 1517119597
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -85,7 +85,13 @@ ModelImporter:
     400074: Mesh_Head003
     400076: mesh_morve001
     400078: Root
-    2100000: No Name
+    2100000: lamahead color
+    2100002: llama hair color
+    2100004: 'Material #64'
+    2100006: 'Material #15'
+    2100008: Noir
+    2100010: llamadent
+    2100012: 'Material #85'
     4300000: Mesh_Head003
     4300002: mesh_morve001
     9500000: //RootNode

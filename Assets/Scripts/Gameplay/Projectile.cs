@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour {
     public int scoreToAdd = 0;
     public int comboMultiplier = 1;
 
+    private float timer;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +17,7 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        Manager_Effect.Manager.Call_SpitPuddle(ref timer, transform);
 	}
 
     private void OnCollisionEnter(Collision collision)

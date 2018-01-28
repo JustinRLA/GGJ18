@@ -1,80 +1,82 @@
 fileFormatVersion: 2
-guid: 442db7534d981ce4db4adf07827bcf79
-timeCreated: 1517101043
+guid: a8b72f2fb38f0a84ea21a6ec245deba5
+timeCreated: 1517120436
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Bip003
-    100002: Bip003 Head
-    100004: Bip003 HeadNub
-    100006: Bip003 L Calf
-    100008: Bip003 L Clavicle
-    100010: Bip003 L Finger0
-    100012: Bip003 L Finger0Nub
-    100014: Bip003 L Foot
-    100016: Bip003 L Forearm
-    100018: Bip003 L Hand
-    100020: Bip003 L Thigh
-    100022: Bip003 L Toe0
-    100024: Bip003 L Toe0Nub
-    100026: Bip003 L UpperArm
-    100028: Bip003 Neck
-    100030: Bip003 Pelvis
-    100032: Bip003 R Calf
-    100034: Bip003 R Clavicle
-    100036: Bip003 R Finger0
-    100038: Bip003 R Finger0Nub
-    100040: Bip003 R Foot
-    100042: Bip003 R Forearm
-    100044: Bip003 R Hand
-    100046: Bip003 R Thigh
-    100048: Bip003 R Toe0
-    100050: Bip003 R Toe0Nub
-    100052: Bip003 R UpperArm
-    100054: Bip003 Spine
-    100056: Bip003 Spine1
-    100058: Bip003 Spine2
-    100060: //RootNode
-    100062: Mesh_Body
-    100064: Root
+    100002: Bip003 L Calf
+    100004: Bip003 L Clavicle
+    100006: Bip003 L Finger0
+    100008: Bip003 L Finger0Nub
+    100010: Bip003 L Foot
+    100012: Bip003 L Forearm
+    100014: Bip003 L Hand
+    100016: Bip003 L Thigh
+    100018: Bip003 L Toe0
+    100020: Bip003 L Toe0Nub
+    100022: Bip003 L UpperArm
+    100024: Bip003 Neck
+    100026: Bip003 Pelvis
+    100028: Bip003 R Calf
+    100030: Bip003 R Clavicle
+    100032: Bip003 R Finger0
+    100034: Bip003 R Finger0Nub
+    100036: Bip003 R Foot
+    100038: Bip003 R Forearm
+    100040: Bip003 R Hand
+    100042: Bip003 R Thigh
+    100044: Bip003 R Toe0
+    100046: Bip003 R Toe0Nub
+    100048: Bip003 R UpperArm
+    100050: Bip003 Spine
+    100052: Bip003 Spine1
+    100054: Bip003 Spine2
+    100056: //RootNode
+    100058: Mesh_Body002
+    100060: Root
     400000: Bip003
-    400002: Bip003 Head
-    400004: Bip003 HeadNub
-    400006: Bip003 L Calf
-    400008: Bip003 L Clavicle
-    400010: Bip003 L Finger0
-    400012: Bip003 L Finger0Nub
-    400014: Bip003 L Foot
-    400016: Bip003 L Forearm
-    400018: Bip003 L Hand
-    400020: Bip003 L Thigh
-    400022: Bip003 L Toe0
-    400024: Bip003 L Toe0Nub
-    400026: Bip003 L UpperArm
-    400028: Bip003 Neck
-    400030: Bip003 Pelvis
-    400032: Bip003 R Calf
-    400034: Bip003 R Clavicle
-    400036: Bip003 R Finger0
-    400038: Bip003 R Finger0Nub
-    400040: Bip003 R Foot
-    400042: Bip003 R Forearm
-    400044: Bip003 R Hand
-    400046: Bip003 R Thigh
-    400048: Bip003 R Toe0
-    400050: Bip003 R Toe0Nub
-    400052: Bip003 R UpperArm
-    400054: Bip003 Spine
-    400056: Bip003 Spine1
-    400058: Bip003 Spine2
-    400060: //RootNode
-    400062: Mesh_Body
-    400064: Root
-    2100000: No Name
-    4300000: Mesh_Body
+    400002: Bip003 L Calf
+    400004: Bip003 L Clavicle
+    400006: Bip003 L Finger0
+    400008: Bip003 L Finger0Nub
+    400010: Bip003 L Foot
+    400012: Bip003 L Forearm
+    400014: Bip003 L Hand
+    400016: Bip003 L Thigh
+    400018: Bip003 L Toe0
+    400020: Bip003 L Toe0Nub
+    400022: Bip003 L UpperArm
+    400024: Bip003 Neck
+    400026: Bip003 Pelvis
+    400028: Bip003 R Calf
+    400030: Bip003 R Clavicle
+    400032: Bip003 R Finger0
+    400034: Bip003 R Finger0Nub
+    400036: Bip003 R Foot
+    400038: Bip003 R Forearm
+    400040: Bip003 R Hand
+    400042: Bip003 R Thigh
+    400044: Bip003 R Toe0
+    400046: Bip003 R Toe0Nub
+    400048: Bip003 R UpperArm
+    400050: Bip003 Spine
+    400052: Bip003 Spine1
+    400054: Bip003 Spine2
+    400056: //RootNode
+    400058: Mesh_Body002
+    400060: Root
+    2100000: Noir
+    2100002: humainpantalon
+    2100004: adulttissu
+    2100006: llama hair color
+    2100008: llamadent
+    2100010: humainpeau
+    2100012: 'Material #81'
+    4300000: Mesh_Body002
     9500000: //RootNode
-    13700000: Mesh_Body
+    13700000: Mesh_Body002
   externalObjects: {}
   materials:
     importMaterials: 1

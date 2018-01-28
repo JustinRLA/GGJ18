@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e1637ee7ed698c64aa15a8af6e9442c6
-timeCreated: 1517103719
+guid: 48e7ce80051ff424fa67fdbbcfb38787
+timeCreated: 1517120184
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,42 +8,92 @@ ModelImporter:
     100000: Bip004
     100002: Bip004 Head
     100004: Bip004 HeadNub
-    100006: Bip004 Neck
-    100008: Bip004 Pelvis
-    100010: Bip004 Ponytail1
-    100012: Bip004 Ponytail11
-    100014: Bip004 Ponytail12
-    100016: Bip004 Ponytail13
-    100018: Bip004 Ponytail14
-    100020: Bip004 Ponytail1Nub
-    100022: Bip004 Spine
-    100024: Bip004 Spine1
-    100026: Bip004 Spine2
-    100028: //RootNode
-    100030: Mesh_Head002
-    100032: mesh_morve
-    100034: Root
+    100006: Bip004 L Calf
+    100008: Bip004 L Clavicle
+    100010: Bip004 L Finger0
+    100012: Bip004 L Finger0Nub
+    100014: Bip004 L Foot
+    100016: Bip004 L Forearm
+    100018: Bip004 L Hand
+    100020: Bip004 L Thigh
+    100022: Bip004 L Toe0
+    100024: Bip004 L Toe0Nub
+    100026: Bip004 L UpperArm
+    100028: Bip004 Neck
+    100030: Bip004 Pelvis
+    100032: Bip004 Ponytail1
+    100034: Bip004 Ponytail11
+    100036: Bip004 Ponytail12
+    100038: Bip004 Ponytail13
+    100040: Bip004 Ponytail14
+    100042: Bip004 Ponytail1Nub
+    100044: Bip004 R Calf
+    100046: Bip004 R Clavicle
+    100048: Bip004 R Finger0
+    100050: Bip004 R Finger0Nub
+    100052: Bip004 R Foot
+    100054: Bip004 R Forearm
+    100056: Bip004 R Hand
+    100058: Bip004 R Thigh
+    100060: Bip004 R Toe0
+    100062: Bip004 R Toe0Nub
+    100064: Bip004 R UpperArm
+    100066: Bip004 Spine
+    100068: Bip004 Spine1
+    100070: Bip004 Spine2
+    100072: //RootNode
+    100074: Mesh_Head002
+    100076: mesh_morve
+    100078: Root
     400000: Bip004
     400002: Bip004 Head
     400004: Bip004 HeadNub
-    400006: Bip004 Neck
-    400008: Bip004 Pelvis
-    400010: Bip004 Ponytail1
-    400012: Bip004 Ponytail11
-    400014: Bip004 Ponytail12
-    400016: Bip004 Ponytail13
-    400018: Bip004 Ponytail14
-    400020: Bip004 Ponytail1Nub
-    400022: Bip004 Spine
-    400024: Bip004 Spine1
-    400026: Bip004 Spine2
-    400028: //RootNode
-    400030: Mesh_Head002
-    400032: mesh_morve
-    400034: Root
-    2100000: No Name
-    4300000: Mesh_Head002
-    4300002: mesh_morve
+    400006: Bip004 L Calf
+    400008: Bip004 L Clavicle
+    400010: Bip004 L Finger0
+    400012: Bip004 L Finger0Nub
+    400014: Bip004 L Foot
+    400016: Bip004 L Forearm
+    400018: Bip004 L Hand
+    400020: Bip004 L Thigh
+    400022: Bip004 L Toe0
+    400024: Bip004 L Toe0Nub
+    400026: Bip004 L UpperArm
+    400028: Bip004 Neck
+    400030: Bip004 Pelvis
+    400032: Bip004 Ponytail1
+    400034: Bip004 Ponytail11
+    400036: Bip004 Ponytail12
+    400038: Bip004 Ponytail13
+    400040: Bip004 Ponytail14
+    400042: Bip004 Ponytail1Nub
+    400044: Bip004 R Calf
+    400046: Bip004 R Clavicle
+    400048: Bip004 R Finger0
+    400050: Bip004 R Finger0Nub
+    400052: Bip004 R Foot
+    400054: Bip004 R Forearm
+    400056: Bip004 R Hand
+    400058: Bip004 R Thigh
+    400060: Bip004 R Toe0
+    400062: Bip004 R Toe0Nub
+    400064: Bip004 R UpperArm
+    400066: Bip004 Spine
+    400068: Bip004 Spine1
+    400070: Bip004 Spine2
+    400072: //RootNode
+    400074: Mesh_Head002
+    400076: mesh_morve
+    400078: Root
+    2100000: 'Material #85'
+    2100002: lamahead color
+    2100004: llama hair color
+    2100006: 'Material #64'
+    2100008: 'Material #28'
+    2100010: Noir
+    2100012: llamadent
+    4300000: mesh_morve
+    4300002: Mesh_Head002
     9500000: //RootNode
     13700000: Mesh_Head002
     13700002: mesh_morve

@@ -8,6 +8,9 @@ TagManager:
   - Survivor
   - Infected
   - Cough
+  - Sand
+  - Grass
+  - Stone
   layers:
   - Default
   - TransparentFX
