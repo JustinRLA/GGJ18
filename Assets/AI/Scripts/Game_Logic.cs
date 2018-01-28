@@ -86,7 +86,7 @@ public class Game_Logic : MonoBehaviour {
 				break;
 			case "gameover":
 				ApplicationModel.playerScore = Info.Score;
-				Call_ScreenTranition(false, 0);
+				Call_ScreenTranition(false, 2);
 				break;
 			}
 			break;

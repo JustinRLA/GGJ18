@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54535158019714196}
   - component: {fileID: 114262737841771458}
   - component: {fileID: 65539968970316566}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Cough
   m_TagString: Cough
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4795332133185848}
   - component: {fileID: 198997590362940390}
   - component: {fileID: 199409622720283904}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FX_Spit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4604845787867008}
   - component: {fileID: 198873909891890884}
   - component: {fileID: 199188621720629976}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,8 +74,9 @@ Transform:
   m_GameObject: {fileID: 1733504558004568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.861, y: 1.68, z: 11.319}
-  m_LocalScale: {x: 0.54745615, y: 0.5474562, z: 0.5474562}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4795332133185848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
