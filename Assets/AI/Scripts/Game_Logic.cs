@@ -17,6 +17,7 @@ public class Game_Logic : MonoBehaviour {
 	[System.Serializable]
 	public class _STAT{
 		public int TimerDuration = 30;
+		public int MaxScore = 30;
 	}
 	public _STAT STAT;
 	[System.Serializable]
@@ -69,7 +70,7 @@ public class Game_Logic : MonoBehaviour {
 				break;
 			case "gameplay":
 				Function_GameTimer();
-				if(Info.Timer <= 0){
+				if(Info.Timer <= 0 || Info.Score >= STAT.MaxScore){
 					gameState = "score";
 				}
 				break;
