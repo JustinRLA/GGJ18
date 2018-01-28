@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterControl : MonoBehaviour {
 
@@ -42,6 +43,11 @@ public class CharacterControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Input.GetKeyUp("escape"))
+        {
+            MainMenu();
+        }
 
         //Movement
         leftMove = Input.GetAxis("LeftMove") * Time.deltaTime * 5.0f * myTerrain.MovementPercentPlayer();
@@ -218,5 +224,12 @@ public class CharacterControl : MonoBehaviour {
         Manager_Effect.Manager.Call_Spit();
         coughCharge = 0.0f;
         Cough();
+    }
+
+    void MainMenu()
+    {
+        //Set menu to Main Menu Screen
+        ApplicationModel.menuState = 0;
+        SceneManager.LoadScene(0);
     }
 }

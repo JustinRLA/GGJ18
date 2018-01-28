@@ -18,10 +18,10 @@ public class RandomFX_Scream : MonoBehaviour {
 	void Update () {
 		
 	}
-
+    float TIMER;
 	// Need to call this funciton to randomize
 	public void PlayFootstepStone(){
-	
+	if(Time.time < TIMER) { return; }
 		// Randomize
 		int randcomClip = Random.Range (0, clips.Length);
 
@@ -39,7 +39,9 @@ public class RandomFX_Scream : MonoBehaviour {
 
 		// Destroy the AudioSource when done playing clip
 		Destroy(source, clips[randcomClip].length);
-	}
+
+        TIMER = Time.time + Random.Range(0.5f, 1f);
+    }
 
 
 
