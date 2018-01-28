@@ -2414,7 +2414,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753448780553732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3999996, y: 0, z: 4.09}
+  m_LocalPosition: {x: -1.8932085, y: -0.12729716, z: 4.729806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4999404738461846}
@@ -3812,6 +3812,8 @@ MonoBehaviour:
   bodyAnimator: {fileID: 95203635597519612}
   headAnimator: {fileID: 95203827922352796}
   headLamaAnimator: {fileID: 95252843315592492}
+  mySFX_Scream: {fileID: 0}
+  mySFX_Lama: {fileID: 0}
   VFX_Convert:
   - {fileID: 1312823280861370}
   - {fileID: 1975727428779750}
