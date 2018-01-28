@@ -52,12 +52,12 @@ public class CameraCollision : MonoBehaviour {
     void OnCollisionEnter(Collision collisionInfo)
     {
         resetCameraPos = false;
-        print("collision enter");
+        //print("collision enter");
     }
 
     void OnCollisionExit(Collision collisionInfo)
     {
         resetCameraPos = true;
-        print("collision exit");
+        //print("collision exit");
     }
 }

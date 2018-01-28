@@ -56,21 +56,17 @@ public class CharacterControl : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) && coughCharge >= coughChargeFull)
         {
-            Cough();
             bodyAnimator.SetTrigger("Spit");
             headAnimator.SetTrigger("Spit");
 
-            StartCoroutine(SpitSound(0.2f));
-
-            Manager_Effect.Manager.Call_Spit();
-            coughCharge = 0.0f;
+            StartCoroutine(SpitSound(0.1f));
         }
 
         //Cough Recharge
         if(coughCharge < coughChargeFull)
         {
             coughCharge += coughChargeRate;
-            if(coughCharge >= coughChargeFull * 0.8)
+            if(coughCharge >= coughChargeFull * 0.6)
             {
                 //Readying to shoot
                 bodyAnimator.SetBool("Charge", true);
@@ -79,7 +75,7 @@ public class CharacterControl : MonoBehaviour {
                 if (!gargleNoiseOnCooldown)
                 {
                     RandomSound.GetComponent<RandomFX_Gargle>().PlayFootstepStone();
-                    StartCoroutine(GargleCooldown(0.5f));
+                    StartCoroutine(GargleCooldown(0.7f));
                 }
             }
         }
@@ -174,15 +170,15 @@ public class CharacterControl : MonoBehaviour {
     {
         if (other.tag == "Sand")
         {
-            print("Sand was too coarse");
+            //print("Sand was too coarse");
             inSand = false;
             if(currentTerrain == "Stone")
             {
-                print("I am ROCK HARD");
+                //print("I am ROCK HARD");
             }
             else
             {
-                print("My ass is grass");
+                //print("My ass is grass");
             }
         }
     }
@@ -191,12 +187,12 @@ public class CharacterControl : MonoBehaviour {
         
         if (collision.gameObject.tag == "Stone" && !inSand)
         {
-            print("I am ROCK HARD");
+            //print("I am ROCK HARD");
             currentTerrain = "Stone";
         }
         else if (collision.gameObject.tag == "Grass" && !inSand)
         {
-            print("My ass is grass");
+            //print("My ass is grass");
             currentTerrain = "Grass";
         }
     }
@@ -219,5 +215,8 @@ public class CharacterControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         RandomSound.GetComponent<RandomFX_Spit>().PlayFootstepStone();
+        Manager_Effect.Manager.Call_Spit();
+        coughCharge = 0.0f;
+        Cough();
     }
 }
