@@ -18,6 +18,8 @@ public class Effect_Spit : MonoBehaviour {
 	public float spriteColorAlphaLevelMin = 1f;
 	public float spriteColorAlphaLevelMax = 0.9f;
 
+	public bool instantGround = false;
+
 	public int state;
 	Transform myTransform;
 	Rigidbody myRigidbody;
@@ -26,6 +28,17 @@ public class Effect_Spit : MonoBehaviour {
 		transform.parent = GameObject.Find("_Effect Manager").transform;
 		myTransform = transform;
 		myRigidbody = GetComponent<Rigidbody>();
+		if(instantGround == true){
+			LayerMask detectLayers = 1 << 8;
+			RaycastHit hit;
+			if(Physics.Raycast(new Vector3(myTransform.position.x, myTransform.position.y + 1f, myTransform.position.z),
+			                   Vector3.down, out hit, 100, detectLayers)){
+				Debug.Log("WORLK");
+				if(hit.collider != null){
+					myTransform.position = new Vector3(myTransform.position.x,hit.point.y + 0.01f,myTransform.position.z);
+				}
+			}
+		}
 	}
 
 	float TIMER;

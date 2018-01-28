@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95303987506666190}
   - component: {fileID: 65479370609218840}
   m_Layer: 0
-  m_Name: "Cl\xF4ture"
+  m_Name: "Clo\u0302ture"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
