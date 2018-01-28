@@ -27,6 +27,13 @@ public class CharacterControl : MonoBehaviour {
     public Animator bodyAnimator;
     public Animator headAnimator;
 
+    public GameObject RandomSound;
+
+    public bool inSand = false;
+    public string currentTerrain = "Stone";
+    public bool stepNoiseOnCooldown = false;
+    public bool gargleNoiseOnCooldown = false;
+
     // Use this for initialization
     void Start () {
         myTerrain = Terrain.Get(gameObject);
@@ -52,6 +59,9 @@ public class CharacterControl : MonoBehaviour {
             Cough();
             bodyAnimator.SetTrigger("Spit");
             headAnimator.SetTrigger("Spit");
+
+            StartCoroutine(SpitSound(0.2f));
+
             Manager_Effect.Manager.Call_Spit();
             coughCharge = 0.0f;
         }
@@ -65,6 +75,12 @@ public class CharacterControl : MonoBehaviour {
                 //Readying to shoot
                 bodyAnimator.SetBool("Charge", true);
                 headAnimator.SetBool("Charge", true);
+
+                if (!gargleNoiseOnCooldown)
+                {
+                    RandomSound.GetComponent<RandomFX_Gargle>().PlayFootstepStone();
+                    StartCoroutine(GargleCooldown(0.5f));
+                }
             }
         }
         else
@@ -102,16 +118,33 @@ public class CharacterControl : MonoBehaviour {
         //Animation Control
         if (Input.GetAxis("LeftMove") != 0 || Input.GetAxis("RightMove") != 0)
         {
+            //Walking animation
             bodyAnimator.SetFloat("Blend", 1);
             headAnimator.SetFloat("Blend", 1);
+
+            //Play footsteps
+            if (!stepNoiseOnCooldown)
+            {
+                if (inSand)
+                {
+                    RandomSound.GetComponent<RandomFX_Footstep_Sand>().PlayFootstepStone();
+                }
+                else if (currentTerrain == "Stone")
+                {
+                    RandomSound.GetComponent<RandomFX_Footstep_Stone>().PlayFootstepStone();
+                }
+                else
+                {
+                    RandomSound.GetComponent<RandomFX_Footstep_Grass>().PlayFootstepStone();
+                }
+                StartCoroutine(WalkCooldown(0.35f));
+            }
         }
         else
         {
             bodyAnimator.SetFloat("Blend", 0);
             headAnimator.SetFloat("Blend", 0);
         }
-
-        
     }
 
     void Cough()
@@ -127,5 +160,64 @@ public class CharacterControl : MonoBehaviour {
 
         // Destroy the cough after 2 seconds
         Destroy(cough, coughProjectileDuration);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Sand")
+        {
+            print("I am in sand");
+            inSand = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Sand")
+        {
+            print("Sand was too coarse");
+            inSand = false;
+            if(currentTerrain == "Stone")
+            {
+                print("I am ROCK HARD");
+            }
+            else
+            {
+                print("My ass is grass");
+            }
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.tag == "Stone" && !inSand)
+        {
+            print("I am ROCK HARD");
+            currentTerrain = "Stone";
+        }
+        else if (collision.gameObject.tag == "Grass" && !inSand)
+        {
+            print("My ass is grass");
+            currentTerrain = "Grass";
+        }
+    }
+
+    IEnumerator WalkCooldown(float waitTime)
+    {
+        stepNoiseOnCooldown = true;
+        yield return new WaitForSeconds(waitTime);
+        stepNoiseOnCooldown = false;
+    }
+
+    IEnumerator GargleCooldown(float waitTime)
+    {
+        gargleNoiseOnCooldown = true;
+        yield return new WaitForSeconds(waitTime);
+        gargleNoiseOnCooldown = false;
+    }
+
+    IEnumerator SpitSound(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        RandomSound.GetComponent<RandomFX_Spit>().PlayFootstepStone();
     }
 }

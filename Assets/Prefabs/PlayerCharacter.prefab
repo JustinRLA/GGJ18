@@ -1791,7 +1791,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984985841104066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0.77, z: 2.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4983513339373064}
@@ -2812,13 +2812,18 @@ MonoBehaviour:
   coughPrefab: {fileID: 1733504558004568, guid: e7ca91e68b8a579499b0769fbd9e6974,
     type: 2}
   coughSpawn: {fileID: 4530951665789042}
-  coughProjectileSpeed: 10
-  coughProjectileDuration: 2
+  coughProjectileSpeed: 20
+  coughProjectileDuration: 0.5
   coughCharge: 0
   coughChargeFull: 100
   coughChargeRate: 1
   bodyAnimator: {fileID: 95454203267416896}
   headAnimator: {fileID: 95393847190475054}
+  RandomSound: {fileID: 0}
+  inSand: 0
+  currentTerrain: Stone
+  stepNoiseOnCooldown: 0
+  gargleNoiseOnCooldown: 0
 --- !u!124 &124135669488083146
 Behaviour:
   m_ObjectHideFlags: 1
