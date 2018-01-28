@@ -22,7 +22,7 @@ public class Manager_Effect : MonoBehaviour {
 	public GameObject prefabSpitPuddle;
 	public void Call_SpitPuddle(ref float timer, Transform myTransform){
 		if(Time.time < timer){return;}
-		Instantiate(prefabSpitPuddle, myTransform.position, myTransform.rotation);
+		Instantiate(prefabSpitPuddle, new Vector3(myTransform.position.x,myTransform.position.y - 1, myTransform.position.z), myTransform.rotation);
 		timer = Time.time + 0.2f;
 	}
 	public GameObject prefabSpitEffect;
