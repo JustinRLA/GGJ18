@@ -18,13 +18,19 @@ public class CharacterControl : MonoBehaviour {
     public float coughProjectileSpeed = 10;
     public float coughProjectileDuration = 2.0f;
 
+    public float coughCharge;
+    public float coughChargeFull = 100.0f;
+    public float coughChargeRate = 1.0f;
+
     Terrain_Function myTerrain;
 
     public Animator bodyAnimator;
+    public Animator headAnimator;
 
     // Use this for initialization
     void Start () {
         myTerrain = Terrain.Get(gameObject);
+        coughCharge = 0.0f;
     }
 	
 	// Update is called once per frame
@@ -39,61 +45,73 @@ public class CharacterControl : MonoBehaviour {
         transform.Translate(0, 0, (leftMove + rightMove));
         transform.Rotate(0, (leftRotate + rightRotate)/5,0);
 
+        //Coughing
 
-        //W Control Indicator
-        if(Input.GetAxis("LeftMove") > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && coughCharge >= coughChargeFull)
         {
-            LeftForward.color = Color.green;
+            Cough();
+            bodyAnimator.SetTrigger("Spit");
+            headAnimator.SetTrigger("Spit");
+            Manager_Effect.Manager.Call_Spit();
+            coughCharge = 0.0f;
+        }
+
+        //Cough Recharge
+        if(coughCharge < coughChargeFull)
+        {
+            coughCharge += coughChargeRate;
+            if(coughCharge >= coughChargeFull * 0.8)
+            {
+                //Readying to shoot
+                bodyAnimator.SetBool("Charge", true);
+                headAnimator.SetBool("Charge", true);
+            }
         }
         else
         {
-            LeftForward.color = Color.white;
+            //Set ready to shoot animation
+            bodyAnimator.SetBool("Charge", false);
+            headAnimator.SetBool("Charge", false);
         }
+
+
+        //HUD Indicators
+        //W Control Indicator
+        if (Input.GetAxis("LeftMove") > 0)
+            LeftForward.color = Color.green;
+        else
+            LeftForward.color = Color.white;
         //O Control Indicator
         if (Input.GetAxis("RightMove") > 0)
-        {
             RightForward.color = Color.green;
-        }
         else
-        {
             RightForward.color = Color.white;
-        }
         //X Control Indicator
         if (Input.GetAxis("LeftMove") < 0)
-        {
             LeftBackward.color = Color.green;
-        }
         else
-        {
             LeftBackward.color = Color.white;
-        }
         //M Control Indicator
         if (Input.GetAxis("RightMove") < 0)
-        {
             RightBackward.color = Color.green;
-        }
         else
-        {
             RightBackward.color = Color.white;
-        }
 
 
 
-
+        //Animation Control
         if (Input.GetAxis("LeftMove") != 0 || Input.GetAxis("RightMove") != 0)
         {
             bodyAnimator.SetFloat("Blend", 1);
+            headAnimator.SetFloat("Blend", 1);
         }
         else
         {
             bodyAnimator.SetFloat("Blend", 0);
+            headAnimator.SetFloat("Blend", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Cough();
-            Manager_Effect.Manager.Call_Spit();
-        }
+        
     }
 
     void Cough()
